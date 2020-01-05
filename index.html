@@ -13,7 +13,7 @@ function myAjaxRequest() {
       $.each(data['rates'], function(i, item) {
       $('#nr_').text(item.no)
       $('#data_').text(item.effectiveDate)
-      $('#kwota_').text(item.bid)
+      $('#kwota_').text(item.bid * $('input#kwota').val())
       });
     },
     error: function( data ) {
@@ -38,6 +38,8 @@ Data Kursu:
 <input type="date" id="data" name="data"><br><br>
 Waluta:
 <input type="text" value="EUR" id="waluta" name="waluta"><br><br>
+(Opcjonalnie) Kwota na PLN:
+<input type="text" value="1" id="kwota" name="kwota"><br><br>
 <input type='SUBMIT' onclick="myAjaxRequest()" value='Prześlij' name='submit' id='submit' />
 
 <h3>Data</h3>
