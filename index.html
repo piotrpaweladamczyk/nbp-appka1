@@ -13,8 +13,8 @@ function myAjaxRequest() {
       $.each(data['rates'], function(i, item) {
       $('#nr_').text(item.no)
       $('#data_').text(item.effectiveDate)
-      $('#suma_').text((item.bid * $('input#kwota').val().replace(',', '.')).toFixed(2).replace('.', ',') + " PLN")
-      $('#kwota_').text((item.bid + " PLN").replace('.', ','))
+      $('#suma_').text((item.mid * $('input#kwota').val().replace(',', '.')).toFixed(2).replace('.', ',') + " PLN")
+      $('#kwota_').text((item.mid + " PLN").replace('.', ','))
       });
     },
     error: function( data ) {
